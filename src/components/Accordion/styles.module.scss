@@ -1,5 +1,17 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  border: 1px solid grey;
+}
+.button {
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 20px;
+}
 .element {
   height: 100px;
   width: 450px;
-  border: 1px solid grey;
 }
