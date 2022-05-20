@@ -4,10 +4,10 @@ function Accordion({ question, answer, handleClick, open }) {
   return (
     <div className={styles.wrap}>
       <button className={styles.button} onClick={handleClick}>
-        {open ? "v" : ">"}
-        <div>{question}</div>
+        {open ? "👇" : "👉"}
+        <div className={styles.question}>{question}</div>
       </button>
-      {open ? <div className={styles.element}>{answer}</div> : null}
+      {open ? <div className={styles.answer}>{answer}</div> : null}
     </div>
   );
 }
