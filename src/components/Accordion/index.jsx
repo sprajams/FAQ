@@ -1,17 +1,13 @@
-import { useState } from "react";
 import styles from "./styles.module.scss";
 
-function Accordion({ question, answer }) {
-  const [active, setActive] = useState(false);
-
+function Accordion({ question, answer, handleClick, open }) {
   return (
     <div className={styles.wrap}>
-      <button className={styles.button} onClick={() => setActive(!active)}>
-        {active ? "v" : ">"}
+      <button className={styles.button} onClick={handleClick}>
+        {open ? "v" : ">"}
         <div>{question}</div>
       </button>
-
-      {active ? <div className={styles.element}>{answer}</div> : null}
+      {open ? <div className={styles.element}>{answer}</div> : null}
     </div>
   );
 }

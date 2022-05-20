@@ -1,6 +1,8 @@
+import { useState } from "react";
 import Accordion from "../Accordion";
 
 function AccordionGroup() {
+  const [activeIndex, setActiveIndex] = useState(0);
   let arrInfo = [
     {
       question: "How many bones does a cat have?",
@@ -19,8 +21,19 @@ function AccordionGroup() {
 
   return (
     <div>
-      {arrInfo.map((x) => {
-        return <Accordion question={x.question} answer={x.answer} />;
+      {arrInfo.map((x, index) => {
+        const handleClick = () => {
+          setActiveIndex(index);
+        };
+        return (
+          <Accordion
+            question={x.question}
+            answer={x.answer}
+            key={index}
+            handleClick={handleClick}
+            open={activeIndex === index}
+          />
+        );
       })}
     </div>
   );
