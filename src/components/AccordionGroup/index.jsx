@@ -3,6 +3,7 @@ import Accordion from "../Accordion";
 
 function AccordionGroup() {
   const [activeIndex, setActiveIndex] = useState(0);
+
   let arrInfo = [
     {
       question: "How many bones does a cat have?",
@@ -24,6 +25,7 @@ function AccordionGroup() {
       {arrInfo.map((x, index) => {
         const handleClick = () => {
           setActiveIndex(index);
+          console.log(activeIndex);
         };
         return (
           <Accordion
